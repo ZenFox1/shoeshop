@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+
+
+/* classes */
+.product-container{
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  gap: 1%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.item-picture{
+  width: 70%;
+}
+
+
+.header{
+  width: 40vw;
+  flex-flow:row wrap;
+}
+
+.shoppingcart{
+  width: 20vw;
+}
+
+
+
+.card{
+  width: 18rem;
+  height: 700px;
+  margin-top: 20px;
+}
+
+/*@media */
+@media (max-width: 300px){
+  .product-container{
+    flex-direction: column;
+  }
+}

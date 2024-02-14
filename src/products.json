@@ -1,0 +1,85 @@
+{
+    "shoes":[
+        {
+            "id": 1,
+            "name": "Joggingschuh blau-rosa",
+            "groeße": "36 - 46",
+            "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
+            "preis": 59.99,
+            "bild": "shoe1.jpg",
+            "marke": "runner"
+        },
+            {
+            "id": 2,
+            "name": "Trackingschuh braun-beige",
+            "groeße": "36 - 46",
+            "beschreibung": "Ideal für Tracking und ähnliche Outdoor Aktivitäten.",
+            "preis": 59.99,
+            "bild": "shoe2.jpg",
+            "marke": "Merrell"
+        },
+            {
+            "id": 3,
+            "name": "Joggingschuh orange",
+            "groeße": "36 - 46",
+            "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
+            "preis": 49.99,
+            "bild": "shoe3.jpg",
+            "marke": "Fluidride"
+        },
+            {
+            "id": 4,
+            "name": "Joggingschuh blau",
+            "groeße": "36 - 46",
+            "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
+            "preis": 49.99,
+            "bild": "shoe4.jpg",
+            "marke": "runner"
+        },
+            {
+            "id": 5,
+            "name": "Joggingschuh grün",
+            "groeße": "36 - 46",
+            "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
+            "preis": 49.99,
+            "bild": "shoe5.jpg",
+            "marke": "Meindl"
+        },
+            {
+            "id": 6,
+            "name": "Kinderschuh schwarz",
+            "groeße": "28 - 35",
+            "beschreibung": "Durch eine gute Passform stützt dieser Schuh den Fuß Ihres Kindes optimal.",
+            "preis": 29.99,
+            "bild": "shoe6.jpg",
+            "marke": "Nike"
+        },
+            {
+            "id": 7,
+            "name": "Outdoorschuh hellbraun",
+            "groeße": "36 - 46",
+            "beschreibung": "Ideal für Tracking und ähnliche Outdoor Aktivitäten.",
+            "preis": 69.99,
+            "bild": "shoe7.jpg",
+            "marke": "active"
+        },
+            {
+            "id": 8,
+            "name": "Joggingschuh rosa",
+            "groeße": "36 - 46",
+            "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
+            "preis": 49.99,
+            "bild": "shoe8.jpg",
+            "marke": "runner"
+        },
+            {
+            "id": 9,
+            "name": "Chacks bun",
+            "groeße": "36 - 46",
+            "beschreibung": "Perfekt für den Alltag geeignet.",
+            "preis": 49.99,
+            "bild": "shoe9.jpg",
+            "marke": "runner"
+        }
+    ]
+}
