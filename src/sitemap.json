@@ -12,10 +12,6 @@
             "name": "brands", 
             "de": "Marken",
             "en": "Brands"
-        },{
-            "name": "sizes",
-            "de": "Größen",
-            "en": "Sizes"
         }
     ],
     "links":[

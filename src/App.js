@@ -12,7 +12,9 @@ import Footer from './components/footer';
 import ViewButton from './components/viewitem';
 import SingleItem from './components/singleitem';
 import BackButton from './components/backbutton';
-
+import ShoppingCartLight from './components/scoverview';
+import ShoppingCart from './components/shoppingcart';
+import MyCarousel from './components/mycarousel';
 
 //import JSON Data
 import productData from './products.json';
@@ -27,7 +29,7 @@ class App extends React.Component {
     }
    } 
 
-  addItem = (amount, name, price) => {
+  addItem = (amount, name, price, image) => {
     let currentItems = this.state.items;
     let existingItem = currentItems.find(item => item.name == name);
 
@@ -39,6 +41,7 @@ class App extends React.Component {
         amount,
         name,
         price,
+        image,
       });
       
     }
@@ -71,7 +74,7 @@ class App extends React.Component {
               shoe => 
               <div className="card">
               <Product key={shoe.id}
-              onAdd={() => this.addItem(1, shoe.name, shoe.preis)}
+              onAdd={() => this.addItem(1, shoe.name, shoe.preis, shoe.bild)}
               price={shoe.preis}
               title={shoe.name}
               text={shoe.beschreibung} 
@@ -88,6 +91,8 @@ class App extends React.Component {
 
         </div>
       </div>;
+    }else if(this.state.views.wert == "cart"){
+      appView =<div><ShoppingCart database={productData} items={data} /></div>;
     }else{
 
       appView =
@@ -96,7 +101,7 @@ class App extends React.Component {
         <div className="single-product">
           <SingleItem 
           product={used}
-          onAdd={() => this.addItem(1, used.name, used.preis)}
+          onAdd={() => this.addItem(1, used.name, used.preis, used.bild)}
           />
         </div>
       </div>;
@@ -110,7 +115,10 @@ class App extends React.Component {
       <div className="container" key="container">
         <div className="header" key="header">
           <Navbar menu={siteMaps.sites} items={data} onAdd={() => this.changeView("start")}/>
+          <span style={{width: "5vw"}}></span>
+          <ShoppingCartLight onAdd={() => this.changeView("cart")} items={data} />
         </div>
+        <MyCarousel />
         {appView}
         
         <Footer menu={siteMaps.foot}/>

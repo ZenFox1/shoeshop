@@ -15,7 +15,7 @@ function SingleItem (props) {
                     {activeItem.groeße.map((size) =>
                     <option key={size}>{size}</option>)}
                 </select>
-                <button onClick={props.onAdd} style={{border: "none", background: "none"}}>
+                <button onClick={props.onAdd}>
                     <img src="./assets/img/add.png"/>
                 </button>
                 <p className="card-text">{activeItem.preis} €</p>

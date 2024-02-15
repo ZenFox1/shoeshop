@@ -17,8 +17,7 @@ function Navbar (props) {
   }
 
   return(
-  <div>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <button onClick={props.onAdd} style={{border: "none", background: "none"}}>
         <img src={logo} />
       </button>
@@ -32,16 +31,7 @@ function Navbar (props) {
           </li>)}
         </ul>
       </div>
-      <div className="scLight">
-        <table>
-          <tbody>
-            <tr><td><h5>Warenkorb</h5></td><td></td></tr>
-            <tr><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Artikel im Warenkorb: {amountOut}</td><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Betrag: {sumOut}</td></tr>
-          </tbody>
-        </table>
-      </div>
     </nav> 
-  </div>
   );
 };
  

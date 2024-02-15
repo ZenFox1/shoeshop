@@ -2,6 +2,12 @@
 
 button{
   color:rgb(20, 20, 20) !important;
+  border: none;
+  background: none;
+}
+
+table{
+  width: 100%;
 }
 
 /* ID's */
@@ -11,7 +17,9 @@ button{
 /* classes */
 .App {
   color:rgb(20, 20, 20) !important;
+  
 }
+
 
 .product-container{
   display: flex;
@@ -22,7 +30,18 @@ button{
   padding-left: 15px;
   padding-right: 15px;
 }
-
+.sc-img-min{
+  width: 100px;
+}
+.show-btn, .add-btn, .cart-btn{
+  
+  border-radius: 4%;
+  text-align: center;
+  font-size: 12px;
+}
+.btn-img-1{
+  width: 40px;
+}
 .single-product{
   width: 99%;
   
@@ -44,12 +63,17 @@ button{
 }
 
 .header{
-  width: 40vw;
+  width: 100%;
+  display: flex;
   flex-flow:row wrap;
+  
 }
-
+.scLight{
+  display: flex;
+  width: 40vw;
+}
 .shoppingcart{
-  width: 20vw;
+  width: 99%;
 }
 
 

@@ -15,11 +15,19 @@ function ShoppingCartLight(props){
     }
     return(
         <div className="scLight">
-        
         <table>
-            <tr><td><h5>Warenkorb</h5></td><td></td></tr>
-            <tr><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Artikel im Warenkorb: {amountOut}</td><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Betrag: {sumOut}</td></tr>
-            </table>
+        <tbody>
+            <tr>
+                <td>Artikel im Warenkorb: {amountOut}</td>
+                <td>Betrag: {sumOut}</td>
+                <td>
+                    <button onClick={props.onAdd} className="cart-btn" title="zum Warenkorb">
+                        <img src="./assets/img/cart.png" />zum Warenkorb
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        </table>
         </div>
     );
 };
