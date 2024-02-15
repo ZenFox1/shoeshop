@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class Footer extends Component {
-    state = {  } 
-    render() { 
-        return <ul className="nav justify-content-end">
-        <li className="nav-item">
-          <a className="nav-link active" href="">Impressum</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="">AGB</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="">Presse</a>
-        </li>
-      </ul>;
-    }
-}
+function Footer (props) {
+      return(<ul className="nav justify-content-end">
+        
+        {props.menu.map((foot) => <li className="nav-item">
+           <button className="nav-link">{foot.de}</button></li>)}
+      </ul>
+    );
+};
  
 export default Footer;

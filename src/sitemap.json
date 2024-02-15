@@ -1,0 +1,48 @@
+{
+    "sites":[
+        {
+            "name": "cats",
+            "de": "Kategorien",
+            "en": "Categories"
+        },{
+            "name": "sales",
+            "de": "Angebote",
+            "en": "Sales"
+        },{
+            "name": "brands", 
+            "de": "Marken",
+            "en": "Brands"
+        },{
+            "name": "sizes",
+            "de": "Größen",
+            "en": "Sizes"
+        }
+    ],
+    "links":[
+       {
+            "name": "help",
+            "de": "Hilfe"
+        },{
+            "name": "pay",
+            "de": "Zahlungsmethoden"
+        },{
+            "name": "contact",
+            "de": "Kontakt"
+        }
+    ],
+    "foot":[
+        {
+            "name": "agb",
+            "de": "AGB"
+        },{
+            "name": "dsgvo",
+            "de": "Datenschutz"
+        },{
+            "name": "terms",
+            "de": "Nutzungsbedingungen"
+        },        {
+            "name": "impressum",
+            "de": "Impressum"
+        }
+    ]
+}

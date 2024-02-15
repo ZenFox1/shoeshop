@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import logo from "../logo.png";
 
-function Navbar (props) {
 
+function Navbar (props) {
   const sum = props.items.map((items) => items.price)
   const amounts = props.items.map((items) => items.amount)
   let sumOut = 0;
@@ -23,15 +23,9 @@ function Navbar (props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item active">
-              <a className="nav-link" href="">Kategorien</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">Angebote</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">Marken</a>
-            </li>
+            {props.menu.map((nav) =><li className="nav-item active">
+              <button className="nav-link">{nav.de}</button>
+            </li>)}
           </ul>
         </div>
         <div className="scLight">
