@@ -10,7 +10,9 @@ function Product (props) {
         <p className="card-text">{props.text}</p>
         <p className="card-text">{props.price} €</p>
       </div>
-      <button onClick={props.onAdd} style={{border: "none", background: "none"}}><img src="./assets/img/add.png"/></button>
+      <button onClick={props.onAdd} style={{border: "none", background: "none"}}>
+        <img src="./assets/img/add.png"/>
+      </button>
     </div>
   );
 };

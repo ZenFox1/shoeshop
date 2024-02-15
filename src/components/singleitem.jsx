@@ -1,20 +1,26 @@
 import React from 'react';
 
 function SingleItem (props) {
-
     const activeItem = props.product;
-    console.log(activeItem);
-    return (<div className="wrap">
-    <div className="pic-desc">
-        <h5 className="">{activeItem.name}</h5>
-        <img className="item-picture" src={"./assets/img/" + activeItem.bild} alt="Card image cap"/>
-        <p className="card-text">{activeItem.beschreibung}</p>
-    </div>
-    <div className="">
-        <p className="card-text">{activeItem.preis} €</p>
-        <button onClick={props.onAdd} style={{border: "none", background: "none"}}><img src="./assets/img/add.png"/></button>
-    </div>
-</div>
+    return (
+        <div>
+            <h5 className="single-product-title">{activeItem.name}</h5>
+            <div className="pic-desc">
+                <img className="item-picture" src={"./assets/img/" + activeItem.bild} alt="Card image cap"/>
+                <p className="card-text">{activeItem.beschreibung}</p>
+            </div>
+            <div className="pic-desc">
+                <label for="sizes">Größe wählen</label>
+                <select name="sizes">
+                    {activeItem.groeße.map((size) =>
+                    <option>{size}</option>)}
+                </select>
+                <button onClick={props.onAdd} style={{border: "none", background: "none"}}>
+                    <img src="./assets/img/add.png"/>
+                </button>
+                <p className="card-text">{activeItem.preis} €</p>
+            </div>
+        </div>
     );
 };
  

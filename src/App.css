@@ -1,10 +1,18 @@
-.App {
-  text-align: center;
+/* general */
+
+button{
+  color:rgb(20, 20, 20) !important;
 }
+
+/* ID's */
 
 
 
 /* classes */
+.App {
+  color:rgb(20, 20, 20) !important;
+}
+
 .product-container{
   display: flex;
   flex-flow:row wrap;
@@ -15,10 +23,25 @@
   padding-right: 15px;
 }
 
-.item-picture{
-  width: 70%;
+.single-product{
+  width: 99%;
+  
 }
 
+.single-product-title{
+  font-weight: lighter;
+}
+
+.item-picture{
+  width: 40vw;
+  
+}
+
+.pic-desc{
+  display: flex;
+  gap: 30px;
+  flex-flow:row wrap;
+}
 
 .header{
   width: 40vw;
@@ -36,6 +59,7 @@
   height: 700px;
   margin-top: 20px;
 }
+
 
 /*@media */
 @media (max-width: 300px){
