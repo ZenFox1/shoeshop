@@ -64,8 +64,8 @@ class App extends React.Component {
 
     if(this.state.views.wert == "start"){
       appView =  
-      <div>
-        <div className="product-container">
+      <div key="wrap" className="warp">
+        <div className="product-container" key="product-container">
           {
             productData.shoes.map(
               shoe => 
@@ -106,9 +106,9 @@ class App extends React.Component {
     
     //erzeugen der vollständigen Seite
     appOutput =
-    <div className="App">
-      <div className="container">
-        <div className="header">
+    <div className="App" key="App">
+      <div className="container" key="container">
+        <div className="header" key="header">
           <Navbar menu={siteMaps.sites} items={data} onAdd={() => this.changeView("start")}/>
         </div>
         {appView}

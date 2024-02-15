@@ -27,15 +27,17 @@ function Navbar (props) {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          {props.menu.map((nav) =><li className="nav-item active">
+          {props.menu.map((nav) =><li key={nav.de} className="nav-item active">
             <button className="nav-link">{nav.de}</button>
           </li>)}
         </ul>
       </div>
       <div className="scLight">
         <table>
-          <tr><td><h5>Warenkorb</h5></td><td></td></tr>
-          <tr><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Artikel im Warenkorb: {amountOut}</td><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Betrag: {sumOut}</td></tr>
+          <tbody>
+            <tr><td><h5>Warenkorb</h5></td><td></td></tr>
+            <tr><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Artikel im Warenkorb: {amountOut}</td><td style={{paddingLeft: "50px",paddingRight: "50px"}}>Betrag: {sumOut}</td></tr>
+          </tbody>
         </table>
       </div>
     </nav> 

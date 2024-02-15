@@ -13,7 +13,7 @@ function SingleItem (props) {
                 <label for="sizes">Größe wählen</label>
                 <select name="sizes">
                     {activeItem.groeße.map((size) =>
-                    <option>{size}</option>)}
+                    <option key={size}>{size}</option>)}
                 </select>
                 <button onClick={props.onAdd} style={{border: "none", background: "none"}}>
                     <img src="./assets/img/add.png"/>
