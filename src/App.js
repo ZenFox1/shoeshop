@@ -12,7 +12,7 @@ import Footer from './components/footer';
 import ViewButton from './components/viewitem';
 import SingleItem from './components/singleitem';
 import BackButton from './components/backbutton';
-import ShoppingCartLight from './components/scoverview';
+import ShoppingCartLight from './components/shoppingcartlight';
 import ShoppingCart from './components/shoppingcart';
 import MyCarousel from './components/mycarousel';
 
