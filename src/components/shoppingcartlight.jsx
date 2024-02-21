@@ -1,35 +1,33 @@
-import React, { Component } from 'react';
+import "../css/shoppingcart.css"
+function ShoppingcartLight(props) {
+    const sum = props.items.map((item) => item.total);
+    const amounts = props.items.map((item) => item.amount);
 
-function ShoppingCartLight(props){
-    const sum = props.items.map((items) => items.price)
-    const amounts = props.items.map((items) => items.amount)
-    let sumOut = 0;
-    let amountOut = 0;
+
+    var sumOut = 0;
+    var amountOut = 0;
 
     for(let i =0; i< sum.length; i++){
         sumOut += sum[i];
-    }
-
-    for(let i =0; i< amounts.length; i++){
         amountOut += amounts[i];
+
     }
+    
+    sumOut = Math.round(sumOut * 100)/100;
+
     return(
-        <div className="scLight">
-        <table>
+        <div className="sc-light">
+        <table className="sc-table">
         <tbody>
-            <tr>
-                <td>Artikel im Warenkorb: {amountOut}</td>
-                <td>Betrag: {sumOut}</td>
-                <td>
-                    <button onClick={props.onAdd} className="cart-btn" title="zum Warenkorb">
-                        <img src="./assets/img/cart.png" />zum Warenkorb
-                    </button>
-                </td>
+            <tr className="sc-nodot">
+                <td className="scLight-font">Menge im Warenkorb: {amountOut}</td>
+                <td className="scLight-font">Betrag: {sumOut} €</td>
+                <td className="scLight-font"><button onClick={props.clicked}><img alt="to cart" className="btn-img-1" src="./assets/img/cart.png"/>Warenkorb anzeigen</button></td>
             </tr>
         </tbody>
         </table>
         </div>
     );
-};
 
-export default ShoppingCartLight;
+};
+export default ShoppingcartLight;

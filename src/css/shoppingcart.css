@@ -1,0 +1,43 @@
+/* shoppingcart main css*/
+.sc-table{
+    
+}
+.sc-bold{
+    font-weight: bold;
+}
+
+tr{
+    border-bottom: dotted 1px lightgray;
+}
+
+/* shoppingcartlight css*/
+.sc-light{
+    float:right;
+    width:50%
+}
+
+.scLight-font{
+    font-size: 15px;
+}
+.sc-nodot{
+    border: none !important;
+}
+
+
+@media (max-width: 770px){
+    .sc-light{
+        width:85%
+    }
+    .scLight-font{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 425px){
+    .sc-light{
+        width:100%
+    }
+    .scLight-font{
+        font-size: 9px;
+    }
+}

@@ -1,74 +1,56 @@
-import React, { useState } from 'react';
-
-function ShoppingCart (props){
-    const sum = props.items.map((items) => items.price)
-    const amounts = props.items.map((items) => items.amount)
-
-    let sumOut = 0;
-    let amountOut = 0;
-    let valout = "";
-    
+import "../css/shoppingcart.css"
+function ShoppingCart(props){
+    const myCheckout = () =>{
+        window.alert("Kein Checkout Implementiert!");
+    }
+    const sum = props.items.map((item) => item.total);
+    var sumOut = 0;
     for(let i =0; i< sum.length; i++){
         sumOut += sum[i];
     }
-
-    for(let i =0; i< amounts.length; i++){
-        amountOut += amounts[i];
-    }
-
-    if(props.type == "light"){
-        valout = <div className="scLight">
-        <table>
-        <tbody>
-            <tr>
-                <td>Artikel im Warenkorb: {amountOut}</td>
-                <td>Betrag: {sumOut}</td>
-                <td>
-                    <button onClick={props.onAdd} className="cart-btn" title="zum Warenkorb">
-                        <img src="./assets/img/cart.png" />zum Warenkorb
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-        </table>
-        </div>;
-    }else{
-        valout = <div className="shoppingcart">
-        <div className="add-btn">
-            <button >
-                <img src="./assets/img/checkout.png"/>jetzt kaufen
-            </button>
-        </div>
-        <h4>Warenkorb</h4>
-        <table>
+    return(
+        <>
+        <span style={{paddingLeft: "45%"}}></span>
+        <button><img onClick={props.back} src="./assets/img/back.png" /></button>
+        <table className="sc-table">
             <thead>
                 <tr>
-                    <th></th>
-                    <th style={{paddingRight: '10px'}}>Name</th>
-                    <th style={{paddingRight: '10px'}}>Preis</th>
-                    <th style={{paddingRight: '10px'}}>Menge</th>
-                    <th></th>
+                    <td></td>
+                    <td>Name</td>
+                    <td>Menge</td>
+                    <td>Preis / Stück</td>
+                    <td>Gesamtpreis</td>
                 </tr>
             </thead>
             <tbody>
-            { props.items.map(item => <tr key={item.name}>
-            <td><img className="sc-img-min" src={"./assets/img/" + item.image}/></td>
-            <td style={{paddingRight: '10px'}}>{item.name}</td>
-            <td style={{paddingRight: '10px'}}>{item.price} €</td>
-            <td style={{paddingRight: '10px'}}>{item.amount}</td>
-            <td><button style={{width: '27px'}}>-</button>
-            <button style={{width: '27px'}}>+</button></td>
-            </tr>)
-            }
-            
+                {props.items.map((item) =>
+                <tr className="item-table-row">
+                    <td><img style={{width: "120px"}} src={"/assets/img/"+item.image}/></td>
+                    <td>{item.name}</td>
+                    <td>{item.amount}</td>
+                    <td>{item.price} €</td>
+                    <td>{item.total} €</td>
+                    <td>
+                        <button onClick={props.decrease}>-</button>
+                        <button onClick={props.increase}>+</button>
+                        <button onClick={props.delete}>X</button>
+                    </td>
+                </tr> )}
             </tbody>
             <tfoot>
-            <tr><td></td><td></td><td></td><td>Summe:</td><td>{sumOut} €</td></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td className="sc-bold">Summe:</td>
+                    <td className="sc-bold">{sumOut} €</td>
+                </tr>
             </tfoot>
         </table>
-    </div>;
-    }
-    return (valout);
+        <span style={{paddingLeft: "80%"}}></span>
+        <button onClick={() => myCheckout()}><img src="./assets/img/checkout.png" />Jetzt kaufen</button>
+        </>
+    );
 };
- 
+
 export default ShoppingCart;

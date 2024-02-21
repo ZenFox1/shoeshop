@@ -2,7 +2,7 @@
     "shoes":[
         {
             "id": 1,
-            "name": "Joggingschuh blau-rosa",
+            "name": "Joggingschuh Starwalk",
             "groeße": [
                 36,
                 37,
@@ -19,11 +19,11 @@
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 59.99,
             "bild": "shoe1.jpg",
-            "marke": "runner"
+            "marke": "Runner"
         },
             {
             "id": 2,
-            "name": "Trackingschuh braun-beige",
+            "name": "Trackingschuh Freelander",
             "groeße": [
                 36,
                 37,
@@ -44,7 +44,7 @@
         },
             {
             "id": 3,
-            "name": "Joggingschuh orange",
+            "name": "Joggingschuh Speedster",
             "groeße": [
                 36,
                 37,
@@ -65,7 +65,7 @@
         },
             {
             "id": 4,
-            "name": "Joggingschuh blau",
+            "name": "Joggingschuh Blueprint",
             "groeße": [
                 36,
                 37,
@@ -82,11 +82,11 @@
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 49.99,
             "bild": "shoe4.jpg",
-            "marke": "runner"
+            "marke": "Runner"
         },
             {
             "id": 5,
-            "name": "Joggingschuh grün",
+            "name": "Joggingschuh Greenich",
             "groeße": [
                 36,
                 37,
@@ -107,7 +107,7 @@
         },
             {
             "id": 6,
-            "name": "Kinderschuh schwarz",
+            "name": "Kinderschuh Nike2O",
             "groeße": [
                27,
                28,
@@ -126,7 +126,7 @@
         },
             {
             "id": 7,
-            "name": "Outdoorschuh hellbraun",
+            "name": "Outdoorschuh Rover",
             "groeße": [
                 36,
                 37,
@@ -147,7 +147,7 @@
         },
             {
             "id": 8,
-            "name": "Joggingschuh rosa",
+            "name": "Joggingschuh Pink Flowed",
             "groeße": [
                 36,
                 37,
@@ -164,11 +164,11 @@
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 49.99,
             "bild": "shoe8.jpg",
-            "marke": "runner"
+            "marke": "Runner"
         },
             {
             "id": 9,
-            "name": "Chacks bun",
+            "name": "Chacks Comicstyle",
             "groeße": [
                 36,
                 37,
@@ -185,7 +185,7 @@
             "beschreibung": "Perfekt für den Alltag geeignet.",
             "preis": 49.99,
             "bild": "shoe9.jpg",
-            "marke": "runner"
+            "marke": "Chack"
         }
     ]
 }

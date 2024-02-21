@@ -1,13 +1,13 @@
-import React from 'react';
+import siteMaps from '../sitemap.json';
 
-
-function Footer (props) {
-      return(<ul className="nav justify-content-end">
-        
-        {props.menu.map((foot) => <li className="nav-item">
-           <button key={foot.de} className="nav-link">{foot.de}</button></li>)}
-      </ul>
+export default function Footer() {
+    const notImp = () =>{
+        window.alert("noch nicht Implementiert!");
+    }
+    return(
+    <ul key="ft"className="nav justify-content-end">
+    {siteMaps.foot.map((foot) => <li key={foot.name} className="nav-item">
+       <button onClick={() => notImp()} key={foot.de} className="nav-link">{foot.de}</button></li>)}
+    </ul>
     );
-};
- 
-export default Footer;
+}
