@@ -3,6 +3,7 @@ import ShoppingcartLight from './components/shoppingcartlight';
 import ProductCard from './components/product';
 import ShoppingCart from './components/shoppingcart';
 import SingleProduct from './components/singleproduct';
+import MyCheckout from './components/checkout';
 //json importe
 import productData from './products.json';
 
@@ -34,9 +35,16 @@ function App(){
     setView({wert: view.wert});
   }
 
-  function decProduct(){
+  function decProduct(name,price){
+    let currentItems = items;
+    let existingItem = currentItems.find(item => item.name === name);
 
+    existingItem.amount--;
+    existingItem.total= ((existingItem.total*100) - (price*100))/100;
+  
+    setItems(currentItems);
   }
+
   function incProduct(){
     
   }
@@ -45,7 +53,6 @@ function App(){
   }
   if(view.wert === "start"){
     return(
-    
       <div key="wrap" className="warp">
         <ShoppingcartLight clicked={() => setView({
           wert: "sc"
@@ -71,12 +78,17 @@ function App(){
   
     );
   }else if (view.wert === "sc"){
-    return(<div><ShoppingCart back={() => setView({wert: "start"})}
+    return(<div><ShoppingCart 
+    back={() => setView({wert: "start"})}
     decrease={() => decProduct()}
     increase={() => incProduct()}
     delete={() => delProduct()}
-    
+    clicked={() => setView({
+      wert: "checkout"
+    })}
     items={items}/></div>);
+  }else if(view.wert === "checkout"){
+    return (<MyCheckout back={() => setView({wert: "sc"})}/>);
   }else{
     let usedItem = productData.shoes.find(item => item.name === view.wert);
     console.log(usedItem + "test");

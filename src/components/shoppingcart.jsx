@@ -1,13 +1,12 @@
 import "../css/shoppingcart.css"
 function ShoppingCart(props){
-    const myCheckout = () =>{
-        window.alert("Kein Checkout Implementiert!");
-    }
+
     const sum = props.items.map((item) => item.total);
     var sumOut = 0;
     for(let i =0; i< sum.length; i++){
         sumOut += sum[i];
     }
+    sumOut = Math.round(sumOut*100)/100;
     return(
         <>
         <span style={{paddingLeft: "45%"}}></span>
@@ -48,7 +47,7 @@ function ShoppingCart(props){
             </tfoot>
         </table>
         <span style={{paddingLeft: "80%"}}></span>
-        <button onClick={() => myCheckout()}><img src="./assets/img/checkout.png" />Jetzt kaufen</button>
+        <button onClick={props.clicked}><img src="./assets/img/checkout.png" />Jetzt kaufen</button>
         </>
     );
 };

@@ -1,11 +1,6 @@
 import logo from "../logo.png";
 import siteMaps from '../sitemap.json';
-
 export default function Navbar() {
-    const notImp = () =>{
-        window.alert("noch nicht Implementiert!");
-    }
-    
     return (
     <nav className="navbar navbar-expand-lg navbar-light">
     <img alt={logo} src={logo} />
@@ -16,10 +11,11 @@ export default function Navbar() {
         <ul className="navbar-nav">
         {siteMaps.sites.map((nav) =>
         <li key={nav.de} className="nav-item active">
-            <button onClick={() => notImp()} className="nav-link">{nav.de}</button>
+            <a className="nav-link">{nav.de}</a>
         </li>)}
         </ul>
         </div>
+
     </nav>
     );
 }
