@@ -7,6 +7,7 @@ function ShoppingCart(props){
         sumOut += sum[i];
     }
     sumOut = Math.round(sumOut*100)/100;
+    
     return(
         <>
         <span style={{paddingLeft: "45%"}}></span>

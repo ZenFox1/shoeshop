@@ -1,9 +1,9 @@
 import React, { useState, useCallback,useEffect } from 'react';
 import ShoppingcartLight from './components/shoppingcartlight';
 import ProductCard from './components/product';
-import ShoppingCart from './components/shoppingcart';
 import SingleProduct from './components/singleproduct';
 import MyCheckout from './components/checkout';
+import "./css/shoppingcart.css"
 //json importe
 import productData from './products.json';
 
@@ -39,18 +39,85 @@ function App(){
     let currentItems = items;
     let existingItem = currentItems.find(item => item.name === name);
 
-    existingItem.amount--;
-    existingItem.total= ((existingItem.total*100) - (price*100))/100;
-  
+    if(existingItem.amount == 1){
+
+    }else{
+      existingItem.amount--;
+      existingItem.total= ((existingItem.total*100) - (price*100))/100;
+    }
     setItems(currentItems);
+    setView({wert: view.wert});
   }
 
-  function incProduct(){
-    
+  function incProduct(name,price){
+    let currentItems = items;
+    let existingItem = currentItems.find(item => item.name === name);
+
+      existingItem.amount++;
+      existingItem.total= ((existingItem.total*100) + (price*100))/100;
+    setItems(currentItems);
+    setView({wert: view.wert});
   }
-  function delProduct(){
-    
+  function delProduct(name){
+    let currentItems = items;
+    setItems(currentItems.filter((current) => current.name !== name));
+    setView({wert: view.wert});
   }
+
+  function ShoppingCart2(props){
+
+    const sum = props.items.map((item) => item.total);
+    var sumOut = 0;
+    for(let i =0; i< sum.length; i++){
+        sumOut += sum[i];
+    }
+    sumOut = Math.round(sumOut*100)/100;
+    
+    return(
+        <>
+        <span style={{paddingLeft: "45%"}}></span>
+        <button><img onClick={props.back} src="./assets/img/back.png" /></button>
+        <table className="sc-table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Name</td>
+                    <td>Menge</td>
+                    <td>Preis / Stück</td>
+                    <td>Gesamtpreis</td>
+                </tr>
+            </thead>
+            <tbody>
+                {props.items.map((item) =>
+                <tr className="item-table-row">
+                    <td><img style={{width: "120px"}} src={"/assets/img/"+item.image}/></td>
+                    <td>{item.name}</td>
+                    <td>{item.amount}</td>
+                    <td>{item.price} €</td>
+                    <td>{item.total} €</td>
+                    <td>
+                        <button onClick={() => decProduct(item.name,item.price)}>-</button>
+                        <button onClick={() => incProduct(item.name,item.price)}>+</button>
+                        <button onClick={() => delProduct(item.name)}>X</button>
+                    </td>
+                </tr> )}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td className="sc-bold">Summe:</td>
+                    <td className="sc-bold">{sumOut} €</td>
+                </tr>
+            </tfoot>
+        </table>
+        <span style={{paddingLeft: "80%"}}></span>
+        <button onClick={props.clicked}><img src="./assets/img/checkout.png" />Jetzt kaufen</button>
+        </>
+    );
+  };
+
   if(view.wert === "start"){
     return(
       <div key="wrap" className="warp">
@@ -78,11 +145,8 @@ function App(){
   
     );
   }else if (view.wert === "sc"){
-    return(<div><ShoppingCart 
+    return(<div><ShoppingCart2 
     back={() => setView({wert: "start"})}
-    decrease={() => decProduct()}
-    increase={() => incProduct()}
-    delete={() => delProduct()}
     clicked={() => setView({
       wert: "checkout"
     })}
