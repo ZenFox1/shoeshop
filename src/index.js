@@ -15,7 +15,7 @@ const notLive = () =>{
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
     <div key="App" className="App">
       <div className="container" key="container">
         <div className="header" key="header">
@@ -30,7 +30,7 @@ root.render(
         </div>
       </div>
     </div>
-  </React.StrictMode>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function

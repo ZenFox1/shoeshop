@@ -67,12 +67,21 @@ function App(){
   function ShoppingCart2(props){
 
     const sum = props.items.map((item) => item.total);
+    var buyButton = "";
+
+
     var sumOut = 0;
     for(let i =0; i< sum.length; i++){
         sumOut += sum[i];
     }
     sumOut = Math.round(sumOut*100)/100;
     
+    if(sumOut == 0){
+      buyButton ="";
+    }else{
+      buyButton = <button onClick={props.clicked}><img src="./assets/img/checkout.png" />Jetzt kaufen</button>;
+    }
+
     return(
         <>
         <span style={{paddingLeft: "45%"}}></span>
@@ -113,7 +122,7 @@ function App(){
             </tfoot>
         </table>
         <span style={{paddingLeft: "80%"}}></span>
-        <button onClick={props.clicked}><img src="./assets/img/checkout.png" />Jetzt kaufen</button>
+        {buyButton}
         </>
     );
   };
@@ -121,7 +130,7 @@ function App(){
   if(view.wert === "start"){
     return(
       <div key="wrap" className="warp">
-        <ShoppingcartLight clicked={() => setView({
+        <ShoppingcartLight amcaption="checked" clicked={() => setView({
           wert: "sc"
         })} items={items}/>
 
@@ -152,13 +161,19 @@ function App(){
     })}
     items={items}/></div>);
   }else if(view.wert === "checkout"){
-    return (<MyCheckout back={() => setView({wert: "sc"})}/>);
+    return (
+      <>
+      <ShoppingcartLight amcaption="unchecked" clicked={() => setView({
+        wert: "sc" })} items={items}/>
+      <MyCheckout back={() => setView({wert: "sc"})}/>
+      </>
+      );
   }else{
     let usedItem = productData.shoes.find(item => item.name === view.wert);
     console.log(usedItem + "test");
     return(
     <div key="wrap" className="warp">
-      <ShoppingcartLight clicked={() => setView({
+      <ShoppingcartLight amcaption="checked" clicked={() => setView({
           wert: "sc"
         })} items={items}/>
         
