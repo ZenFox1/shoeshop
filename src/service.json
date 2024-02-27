@@ -1,0 +1,46 @@
+{
+    "faq":[
+        {
+            "namede": "Widerrufsrecht",
+            "textde": "Sie haben 14 Werktage nach erhalt der Ware Zeit, Ihre Bestellung ohne Angabe von Gründen zu widerrufen.",
+            "werte":""
+        },{
+            "namede": "Zahlungsarten",
+            "textde": "Wir bieten die folgenden Zahlungsmöglichkeiten an.",
+            "werte":[
+                {
+                    "name": "Paypal",
+                    "wert": "Die Bezahlung über Paypal bietet Ihnen die von Paypal angebotenen Services. Darunter der Paypal Käuferschutz, Ratenzahlung und später Zahlen."
+                },
+                {
+                    "name":"Vorkasse Überweisung",
+                    "wert":"Bei dieser zahlungsart erhalten Sie mit der Bestellbestätigung unsere Bankdaten. Die bestellung wird dann ausgeführt, sobald die Zahlung bei uns verbucht wurde."
+                },
+                {
+                    "name":"Klarna",
+                    "wert": "Hier können Sie die von Klarna zur verfügung gestellten Zahlugnsmodalitäten nutzen. Weiteres Dazu finden Sie unter https://www.klarna.com/de/sicher-bezahlen/"
+                }
+            ]
+        },{
+            "namede": "Rückgabe",
+            "textde": "Sie können die Ware binnen 14 Tagen ohne angaben von Gründen an uns zurück senden. Die Kosten für die Rücksendung ist von Ihnen zu tragen.",
+            "werte":""
+        },{
+            "namede": "Garantie",
+            "textde": "Es gelten die gesetzlichen Regelungen für Gewährleistungen. Zitat:'Jeder Händler muss zwei Jahre Gewährleistung (auch Mängelhaftung genannt) auf Neuwaren und zwölf Monate auf Gebrauchtwaren einräumen. Dazu ist er gesetzlich verpflichtet (§§ 437, 438 BGB). Die Gewährleistung deckt Mängel ab, die das Produkt bereits zum Zeitpunkt des Kaufs hatte.'Es gelten die gesetzlichen Regelungen für Gewährleistungen. Zitat:'Jeder Händler muss zwei Jahre Gewährleistung (auch Mängelhaftung genannt) auf Neuwaren und zwölf Monate auf Gebrauchtwaren einräumen. Dazu ist er gesetzlich verpflichtet (§§ 437, 438 BGB). Die Gewährleistung deckt Mängel ab, die das Produkt bereits zum Zeitpunkt des Kaufs hatte.'",
+            "werte":""
+        },{
+            "namede": "Versand",
+            "textde": "Unsere Waren werden ausschließlich via DHL oder der Deutschen Post (für kleinere Artikel) versendet. Sie erhalten für jede Paketsendung eine Sendungsverfolgung.",
+            "werte":""
+        },{
+            "namede": "Lieferung",
+            "textde": "Die Lieferzeiten können Sie am Artikel entnehmen. Abweichungen werden umgehend an Sie kommuniziert. Dies ist z.B. der Fall wenn das Paket im Versandprozess beschädigt wurde o.Ä.",
+            "werte":""
+        },{
+            "namede": "Kontakt",
+            "textde": "Sie erreichen uns per Mail unter support@shoemanji.com oder per Telefon unter 01234-56788910. Bitte Halten Sie Artikelnummer oder Ihre Bestellnumme bereit.",
+            "werte":""
+        }
+    ]
+}

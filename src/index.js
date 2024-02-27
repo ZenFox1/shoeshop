@@ -1,35 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './App.css';
+import './css/App.css';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
-import Navbar from './components/navbar';
-import Footer from './components/footer';
-import LoginForm from './components/loginform';
+
 //component_import
 import App from './App';
 
-const notLive = () =>{
-  window.alert("noch nicht Implementiert!");
-}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <div key="App" className="App">
-      <div className="container" key="container">
-        <div className="header" key="header">
-          <Navbar />
-          <LoginForm clicked={() =>notLive()}/>
-        </div>
-        <div className="content" key="content">
-          <App />
-        </div>
-        <div className="footer" key="footer">
-          <Footer />
-        </div>
-      </div>
-    </div>
+    <App />
   </>
 );
 

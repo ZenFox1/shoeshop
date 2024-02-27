@@ -1,27 +1,60 @@
 import React, { useState, useCallback,useEffect } from 'react';
+import { ReactDOM } from 'react';
+
+//component imports
 import ShoppingcartLight from './components/shoppingcartlight';
 import ProductCard from './components/product';
 import SingleProduct from './components/singleproduct';
 import MyCheckout from './components/checkout';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
+import LoginForm from './components/loginform';
+
+//stylesheet imports
 import "./css/shoppingcart.css"
-//json importe
+
+//json imports
 import productData from './products.json';
+import serviceData from './service.json';
+
 
 function App(){
+
+  //const's
   const [items, setItems] = useState([]);
   const [view, setView] = useState({wert: "start"});
+  const [service, setService] = useState(<button className="service-bot-unused" onClick={() => ServiceBotState(true)}>Hilfe anzeigen</button>);
+  const faqData = serviceData.faq;
 
-  console.log(view.wert + " view");
-  console.log(items);
+  const notLive = () =>{
+    window.alert("noch nicht Implementiert!");
+  }
 
+  //window.localStorage.clear();
+  //window.localStorage.removeItem("cartItems");
+
+
+
+//functions
   function addProduct (amount, name, price, image){
     let currentItems = items;
+    let size = window.localStorage.getItem('size');
     let existingItem = currentItems.find(item => item.name === name);
     let total = price;
 
     if(existingItem){
+      if(existingItem.size === size){
         existingItem.amount++;
         existingItem.total= ((existingItem.total*100) + (price*100))/100;
+      }else{
+        currentItems.push({
+            amount,
+            name,
+            price,
+            total,
+            image,
+            size
+        })};
     }else{
         currentItems.push({
             amount,
@@ -29,15 +62,17 @@ function App(){
             price,
             total,
             image,
+            size
         });
     }
-    setItems(currentItems);
+    window.localStorage.setItem('cartItems', JSON.stringify(items));
     setView({wert: view.wert});
   }
 
-  function decProduct(name,price){
+  function decProduct(name,price,size){
     let currentItems = items;
-    let existingItem = currentItems.find(item => item.name === name);
+    let existingItems = currentItems.filter(item => item.name === name);
+    let existingItem = existingItems.find(item => item.size === size);
 
     if(existingItem.amount == 1){
 
@@ -49,18 +84,22 @@ function App(){
     setView({wert: view.wert});
   }
 
-  function incProduct(name,price){
+  function incProduct(name,price,size){
     let currentItems = items;
-    let existingItem = currentItems.find(item => item.name === name);
+    let existingItems = currentItems.filter(item => item.name === name);
+    let existingItem = existingItems.find(item => item.size === size);
 
       existingItem.amount++;
       existingItem.total= ((existingItem.total*100) + (price*100))/100;
     setItems(currentItems);
     setView({wert: view.wert});
   }
-  function delProduct(name){
+  function delProduct(name, size){
     let currentItems = items;
-    setItems(currentItems.filter((current) => current.name !== name));
+    let existingItems = currentItems.filter(item => item.name === name);
+    let existingItem = existingItems.find(item => item.size === size);
+
+    setItems(currentItems.filter((current) => current !== existingItem));
     setView({wert: view.wert});
   }
 
@@ -91,6 +130,7 @@ function App(){
                 <tr>
                     <td></td>
                     <td>Name</td>
+                    <td>Größe</td>
                     <td>Menge</td>
                     <td>Preis / Stück</td>
                     <td>Gesamtpreis</td>
@@ -101,13 +141,14 @@ function App(){
                 <tr className="item-table-row">
                     <td><img style={{width: "120px"}} src={"/assets/img/"+item.image}/></td>
                     <td>{item.name}</td>
+                    <td>{item.size}</td>
                     <td>{item.amount}</td>
                     <td>{item.price} €</td>
                     <td>{item.total} €</td>
                     <td>
-                        <button onClick={() => decProduct(item.name,item.price)}>-</button>
-                        <button onClick={() => incProduct(item.name,item.price)}>+</button>
-                        <button onClick={() => delProduct(item.name)}>X</button>
+                        <button onClick={() => decProduct(item.name,item.price, item.size)}>-</button>
+                        <button onClick={() => incProduct(item.name,item.price, item.size)}>+</button>
+                        <button onClick={() => delProduct(item.name, item.size)}>X</button>
                     </td>
                 </tr> )}
             </tbody>
@@ -126,20 +167,82 @@ function App(){
         </>
     );
   };
+  function Servicebot(){
+    const [base, setBase] = useState("default");
+    const [basename, setBasename] = useState("");
+    
+
+    
+    function theSwitcher(name){
+      let existingItem = faqData.find(item => item.namede === name);
+      if(existingItem){
+        setBase(existingItem.textde);
+        setBasename(existingItem.namede);
+      }
+    }
+    
+    if (basename === ""){
+      return(<>
+      <div>Bitte wählen Sie Ihr Thema aus</div>
+        {faqData.map(theme => <button onClick={() => theSwitcher(theme.namede)}>{theme.namede}</button>)}
+      </>);
+
+    }else if(basename == "Zahlungsarten"){
+      let nextLevel = faqData.find(item => item.namede === basename);
+    return(<>
+      <button style={{fontSize: "14px"}} onClick={() => setBasename("")}><img style={{width: "14px"}} src="./assets/img/back.png"/>zurück</button>
+      <div>Bitte wählen Sie die Zahlungsart über welche Sie Informationen benötigen.</div>
+      <div className="service-bot-texts">
+      {nextLevel.werte.map((lvl) =><button onClick={() => theSwitcher(lvl.name)}>{lvl.name}</button> )}
+      </div>
+      </>);
+
+    }else{
+      return(<>
+      <button style={{fontSize: "14px"}} onClick={() => setBasename("")}><img style={{width: "14px"}} src="./assets/img/back.png"/>zurück</button>
+        <div className="service-bot-texts">{base}</div>
+          
+        </>);
+    }
+  };
+
+  function ServiceBotState(input){
+    var serve = "";
+    if (input === true){
+      serve = <><div className="service-bot">
+        <Servicebot />
+        </div>
+        <button className="service-bot-unused" onClick={() => ServiceBotState(false)}>Hilfe ausblenden</button>
+        </>
+        ;
+    }else{
+      serve = <button className="service-bot-unused" onClick={() => ServiceBotState(true)}>Hilfe anzeigen</button>;
+    }
+    console.log(window.localStorage.getItem('service'));
+    setService(serve);
+  }
 
   if(view.wert === "start"){
     return(
+        <div key="App" className="App">
+        <div className="container" key="container">
+          <div className="header" key="header">
+            <Navbar />
+            <LoginForm clicked={() =>notLive()}/>
+          </div>
+          <div className="content" key="content">
       <div key="wrap" className="warp">
+        {service}
         <ShoppingcartLight amcaption="checked" clicked={() => setView({
           wert: "sc"
         })} items={items}/>
+        
 
         <img className="header-img" src="/assets/img/walking.jpg" />
       <div className="product-container" key="product-container">
       {
         productData.shoes.map((shoe) => 
         <ProductCard key={"shoe"+shoe.id}
-        addItem ={() => addProduct(1,shoe.name,shoe.preis,shoe.bild)}
         showItem={() => setView({
           wert: shoe.name
         })}
@@ -151,35 +254,80 @@ function App(){
         )
       }
       </div></div>
+      </div>
+        <div className="footer" key="footer">
+          <Footer />
+        </div>
+      </div>
+  </div>
   
     );
   }else if (view.wert === "sc"){
-    return(<div><ShoppingCart2 
+    return(
+    
+        <div key="App" className="App">
+        <div className="container" key="container">
+          <div className="header" key="header">
+            <Navbar />
+            <LoginForm clicked={() =>notLive()}/>
+          </div>
+          <div className="content" key="content">
+    <div>{service}<ShoppingCart2 
     back={() => setView({wert: "start"})}
     clicked={() => setView({
       wert: "checkout"
     })}
-    items={items}/></div>);
+    items={items}/></div>
+            </div>
+        <div className="footer" key="footer">
+          <Footer />
+        </div>
+      </div>
+  </div>);
   }else if(view.wert === "checkout"){
     return (
-      <>
-      <ShoppingcartLight amcaption="unchecked" clicked={() => setView({
-        wert: "sc" })} items={items}/>
-      <MyCheckout back={() => setView({wert: "sc"})}/>
-      </>
+      <div key="App" className="App">
+        <div className="container" key="container">
+          <div className="header" key="header">
+            <Navbar />
+            <LoginForm clicked={() =>notLive()}/>
+          </div>
+          <div className="content" key="content">
+          {service}
+          <ShoppingcartLight amcaption="unchecked" clicked={() => setView({
+            wert: "sc" })} items={items}/>
+          <MyCheckout back={() => setView({wert: "sc"})}/>
+          </div>
+          <div className="footer" key="footer">
+            <Footer />
+          </div>
+        </div>
+      </div>
       );
   }else{
     let usedItem = productData.shoes.find(item => item.name === view.wert);
-    console.log(usedItem + "test");
     return(
+        <div key="App" className="App">
+        <div className="container" key="container">
+          <div className="header" key="header">
+            <Navbar />
+            <LoginForm clicked={() =>notLive()}/>
+          </div>
+          <div className="content" key="content">
     <div key="wrap" className="warp">
+      {service}
       <ShoppingcartLight amcaption="checked" clicked={() => setView({
           wert: "sc"
         })} items={items}/>
         
       <SingleProduct back={() => setView({wert: "start"})} addItem={() => addProduct(1,usedItem.name,usedItem.preis,usedItem.bild)} used={usedItem}/>
-    
-    </div>);
+    </div>
+    </div>
+        <div className="footer" key="footer">
+          <Footer />
+        </div>
+      </div>
+  </div>);
   }
   
 };

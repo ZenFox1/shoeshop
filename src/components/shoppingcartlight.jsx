@@ -1,8 +1,9 @@
+
 import "../css/shoppingcart.css"
 function ShoppingcartLight(props) {
     const sum = props.items.map((item) => item.total);
     const amounts = props.items.map((item) => item.amount);
-
+    
 
     var sumOut = 0;
     var amountOut = 0;

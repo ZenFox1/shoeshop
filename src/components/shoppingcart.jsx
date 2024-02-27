@@ -17,6 +17,7 @@ function ShoppingCart(props){
                 <tr>
                     <td></td>
                     <td>Name</td>
+                    <td>Größe</td>
                     <td>Menge</td>
                     <td>Preis / Stück</td>
                     <td>Gesamtpreis</td>
@@ -27,6 +28,7 @@ function ShoppingCart(props){
                 <tr className="item-table-row">
                     <td><img style={{width: "120px"}} src={"/assets/img/"+item.image}/></td>
                     <td>{item.name}</td>
+                    <td>{item.size}</td>
                     <td>{item.amount}</td>
                     <td>{item.price} €</td>
                     <td>{item.total} €</td>

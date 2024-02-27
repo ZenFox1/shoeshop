@@ -1,6 +1,7 @@
 import logo from "../logo.png";
 import siteMaps from '../sitemap.json';
 export default function Navbar() {
+
     return (
     <nav className="navbar navbar-expand-lg navbar-light">
     <img alt={logo} src={logo} />

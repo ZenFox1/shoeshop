@@ -31,17 +31,19 @@ table{
   padding-left: 25%;
   padding-right: 25%;
 }
+
 .kursiv-text{
   font-style: italic;
 }
+
 .product-container{
   display: flex;
   flex-flow:row wrap;
   justify-content: space-around;
   align-items: normal;
   gap: 1%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
+
 }
 .sc-img-min{
   width: 100px;
@@ -52,7 +54,7 @@ table{
   font-size: 12px;
 }
 .btn-img-1{
-  width: 40px;
+  width: 50px;
 }
 .single-product{
   width: 99%;
@@ -75,8 +77,12 @@ table{
 
 .card{
   width: 18rem;
-  height: 700px;
   margin-top: 20px;
+  padding: 10px;
+}
+
+.single-product-view{
+
 }
 
 
@@ -85,4 +91,50 @@ table{
   .product-container{
     flex-direction: column;
   }
+}
+
+
+/*service-bot*/
+
+.service-bot{
+  position: fixed;
+  bottom: 7vh;
+  z-index: 1;
+  right: 5vw;
+  display:flex;
+  width: 300px;
+  height: 350px;
+  flex-flow:column;
+  background-color: rgb(235, 235, 235);
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3%;
+  padding-top: 5px;
+}
+
+.service-bot > button{
+  background-color:rgb(219, 219, 219);
+  margin: 5px;
+  border-radius: 10%;
+}
+
+.service-bot-unused{
+    position: fixed;
+    font-weight: bold;
+    top: 93vh;
+    z-index: 1;
+    right: 5vw;
+    display:flex;
+    width: 100px;
+    flex-flow:column wrap;
+    background-color: rgb(235, 235, 235);
+    border-radius: 5%;
+    border: solid 1px;
+}
+
+.service-bot-texts{
+  overflow: scroll;
+  overflow-x:hidden;
+  margin: 8px;
+  height: 90%;
 }
