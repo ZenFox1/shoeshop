@@ -1,0 +1,68 @@
+/*service-bot*/
+.service-main{
+  position: fixed;
+  z-index: 1;
+  width: 320px;
+  height: 350px;
+}
+
+.service-bot{
+  position: fixed;
+  bottom: 5vh;
+  z-index: 1;
+  right: 1vw;
+  display:flex;
+  width: 300px;
+  height: 350px;
+  flex-flow:column;
+  background-color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3%;
+  padding-top: 5px;
+}
+  
+.service-bot > button{
+  border: solid 1px grey;
+  margin: 5px;
+  border-radius: 2%;
+}
+  
+.service-bot-unused{
+  position: fixed;
+  font-weight: bold;
+  top: 95.4vh;
+  z-index: 1;
+  right: 1.4vw;
+  display:flex;
+  width: 100px;
+  flex-flow:column wrap;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+  border: solid 1px grey;
+}
+
+.service-bot-unused:hover, .service-bot-inuse:hover{
+  background-color: rgb(114, 173, 224);
+}
+
+.service-bot-inuse{
+  position: fixed;
+  font-weight: bold;
+  top: 95vh;
+  z-index: 1;
+  right: 1vw;
+  display:flex;
+  width: 100px;
+  flex-flow:column wrap;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+  border: solid 1px grey;
+}
+  
+.service-bot-texts{
+  overflow: scroll;
+  overflow-x:hidden;
+  margin: 8px;
+  height: 90%;
+}

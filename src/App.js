@@ -15,7 +15,7 @@ import "./css/shoppingcart.css"
 
 //json imports
 import productData from './products.json';
-import serviceData from './service.json';
+
 
 
 function App(){
@@ -23,8 +23,8 @@ function App(){
   //const's
   const [items, setItems] = useState([]);
   const [view, setView] = useState({wert: "start"});
-  const [service, setService] = useState(<button className="service-bot-unused" onClick={() => ServiceBotState(true)}>Hilfe anzeigen</button>);
-  const faqData = serviceData.faq;
+  
+  
 
   const notLive = () =>{
     window.alert("noch nicht Implementiert!");
@@ -167,60 +167,8 @@ function App(){
         </>
     );
   };
-  function Servicebot(){
-    const [base, setBase] = useState("default");
-    const [basename, setBasename] = useState("");
-    
 
-    
-    function theSwitcher(name){
-      let existingItem = faqData.find(item => item.namede === name);
-      if(existingItem){
-        setBase(existingItem.textde);
-        setBasename(existingItem.namede);
-      }
-    }
-    
-    if (basename === ""){
-      return(<>
-      <div>Bitte wählen Sie Ihr Thema aus</div>
-        {faqData.map(theme => <button onClick={() => theSwitcher(theme.namede)}>{theme.namede}</button>)}
-      </>);
 
-    }else if(basename == "Zahlungsarten"){
-      let nextLevel = faqData.find(item => item.namede === basename);
-    return(<>
-      <button style={{fontSize: "14px"}} onClick={() => setBasename("")}><img style={{width: "14px"}} src="./assets/img/back.png"/>zurück</button>
-      <div>Bitte wählen Sie die Zahlungsart über welche Sie Informationen benötigen.</div>
-      <div className="service-bot-texts">
-      {nextLevel.werte.map((lvl) =><button onClick={() => theSwitcher(lvl.name)}>{lvl.name}</button> )}
-      </div>
-      </>);
-
-    }else{
-      return(<>
-      <button style={{fontSize: "14px"}} onClick={() => setBasename("")}><img style={{width: "14px"}} src="./assets/img/back.png"/>zurück</button>
-        <div className="service-bot-texts">{base}</div>
-          
-        </>);
-    }
-  };
-
-  function ServiceBotState(input){
-    var serve = "";
-    if (input === true){
-      serve = <><div className="service-bot">
-        <Servicebot />
-        </div>
-        <button className="service-bot-unused" onClick={() => ServiceBotState(false)}>Hilfe ausblenden</button>
-        </>
-        ;
-    }else{
-      serve = <button className="service-bot-unused" onClick={() => ServiceBotState(true)}>Hilfe anzeigen</button>;
-    }
-    console.log(window.localStorage.getItem('service'));
-    setService(serve);
-  }
 
   if(view.wert === "start"){
     return(
@@ -232,7 +180,6 @@ function App(){
           </div>
           <div className="content" key="content">
       <div key="wrap" className="warp">
-        {service}
         <ShoppingcartLight amcaption="checked" clicked={() => setView({
           wert: "sc"
         })} items={items}/>
@@ -272,7 +219,7 @@ function App(){
             <LoginForm clicked={() =>notLive()}/>
           </div>
           <div className="content" key="content">
-    <div>{service}<ShoppingCart2 
+    <div><ShoppingCart2 
     back={() => setView({wert: "start"})}
     clicked={() => setView({
       wert: "checkout"
@@ -293,7 +240,6 @@ function App(){
             <LoginForm clicked={() =>notLive()}/>
           </div>
           <div className="content" key="content">
-          {service}
           <ShoppingcartLight amcaption="unchecked" clicked={() => setView({
             wert: "sc" })} items={items}/>
           <MyCheckout back={() => setView({wert: "sc"})}/>
@@ -315,7 +261,6 @@ function App(){
           </div>
           <div className="content" key="content">
     <div key="wrap" className="warp">
-      {service}
       <ShoppingcartLight amcaption="checked" clicked={() => setView({
           wert: "sc"
         })} items={items}/>
