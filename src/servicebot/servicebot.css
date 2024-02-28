@@ -20,6 +20,7 @@
   padding-right: 10px;
   border-radius: 3%;
   padding-top: 5px;
+  border: solid 1px grey;
 }
   
 .service-bot > button{
@@ -63,6 +64,6 @@
 .service-bot-texts{
   overflow: scroll;
   overflow-x:hidden;
-  margin: 8px;
+  margin-left: 8px;
   height: 90%;
 }

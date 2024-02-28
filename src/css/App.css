@@ -84,12 +84,23 @@ table{
 .single-product-view{
 
 }
+.login{
+  margin-left: 9%;
+  margin-top: 20px;
+}
 
 
 /*@media */
 @media (max-width: 400px){
   .product-container{
     flex-direction: column;
+  }
+  .header{
+    flex-flow: column wrap;
+  }
+  .form-group{
+    display: flex;
+    flex-flow:column;
   }
 }
 

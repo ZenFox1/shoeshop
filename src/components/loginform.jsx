@@ -1,6 +1,6 @@
 function LoginForm(props){
     return(
-<form  style={{marginLeft: "9%", marginTop: "20px"}}>
+<form  className="login">
   <h6>Anmelden</h6>
   <div className="form-group" style={{fontSize: "12px",display: "flex"}}>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />

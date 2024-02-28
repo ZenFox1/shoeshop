@@ -1,0 +1,91 @@
+{
+    "DEservices":[
+        {
+            "name": "Zahlungsarten",
+            "text": "Wir bieten für Sie die folgenden Möglichkeiten an die bestellte Ware zu zahlen.",
+            "werte":[
+                {
+                    "name": "Paypal",
+                    "wert": "Die Bezahlung über Paypal bietet Ihnen die von Paypal angebotenen Services. Darunter der Paypal Käuferschutz, Ratenzahlung und später Zahlen."
+                },
+                {
+                    "name":"Vorkasse Überweisung",
+                    "wert":"Bei dieser zahlungsart erhalten Sie mit der Bestellbestätigung unsere Bankdaten. Die bestellung wird dann ausgeführt, sobald die Zahlung bei uns verbucht wurde."
+                },
+                {
+                    "name":"Klarna",
+                    "wert": "Hier können Sie die von Klarna zur verfügung gestellten Zahlugnsmodalitäten nutzen. Weiteres Dazu finden Sie unter https://www.klarna.com/de/sicher-bezahlen/"
+                },{
+                    "name": "Amazon Pay",
+                    "wert": "Zahlen sie schnell und einfach über die in Ihrem Amazon Nutzerkonto hinterlegte Bankverbindung oder Kreditkarte."
+                }
+            ]
+        },{
+            "name": "Lieferung & Versand",
+            "text": "Alles wichtige üer unseren Versand.",
+            "werte":[
+                {
+                    "name": "Wer liefert für Sie?",
+                    "wert": "Da wir großen Wert auf schnelle und sichere Lieferung legen werden alle von uns versendeten Pakete mit hilfe der DHL ausgeliefert."
+                },{
+                    "name": "Wie hoch sind die Versandkosten innerhalb Deutschlands?",
+                    "wert": "Für alle Bestellungen unter 100,00 € Warenwert fällt eine Versandpauschale in höhe von 4,99€ an. Ab 100,00 € Warenwert ist der Versand für Sie kosten frei. Die Prüfung erfolgt vor abzügen durch Rabatte o.Ä."
+                },{
+                    "name": "Wie hoch sind die Versandkosten in das EU Ausland?",
+                    "wert": "Für alle Bestellungen mit Lieferung in das EU Ausland fällt eine Versandpauschale in höhe von 9,99 € an."
+                },{
+                    "name": "Kann sich die Rechnungsadresse von der Lieferadresse unterscheiden?",
+                    "wert": "Ja Lieferadresse und Rechnungsadresse können abweichend sein."
+                },{
+                    "name": "In welche Länder wird versendet?",
+                    "wert": "Wir versenden unsere Waren in alle EU Mitgliedsstaaten. Ein Versand in nicht EU Staaten erfolgt derzeit nicht."
+                }
+            ]
+        },{
+            "name": "Bestellung",
+            "text": "Alles wichtige zu Ihrer Bestellung",
+            "werte":[
+                {
+                    "name": "Sind alle Artikel im Shop auch tatsächlich verfügbar?",
+                    "wert": "Ja. Alle Artikel, welche im Shop angezeigt werden, sind auch wie angegeben verfügbar."
+                },{
+                    "name": "Gibt es einen mindestbestellwert?",
+                    "wert": "Nein. Sie müssen keinen bestimmten Warenwert für eine Bestellung erreichen."
+                },{
+                    "name": "Erhalte ich eine Bestellbestätigung nach kaufabwicklung?",
+                    "wert": "Selbstversädlich! Sobald die Bestellung ausgelöst wurde erhalten Sie eine Bestätigungsmail mit einer zusammenfassung Ihrer Bestellung."
+                },{
+                    "name": "Wo kann ich die AGB finden?",
+                    "wert": "Unsere AGB sind für Sie am Ende der Seite verlinkt und können dort aufgerufen werden."
+                }
+            ]
+        },{
+            "name": "Retouren und Rückerstattungen",
+            "text": "Wie kann ich Waren retournieren?",
+            "werte":[
+                {
+                    "name": "Wie lange kann ich den Artikel retournieren?",
+                    "wert": "Sie haben die Möglichkeit den Artikel innerhalb von 30 Werktagen nach erhalt der Ware zurück zu senden."
+                },{
+                    "name": "Ist eine Retoure nach dem Nutzen des Artikels möglich?",
+                    "wert": "Ja ist es. Sollte die Prüfung aber ergeben, dass verschleißspuren vorhanden sind wird der Rückerstattungswert für Sie gemindert."
+                },{
+                    "name": "Wie erfolgt die Rückerstattung nach der Retoure?",
+                    "wert": "Die Erstattung erfolgt auf dem gleichen Weg wie Sie die Zahlung vorgenommen haben. Sollte Sie eine Überweisung getätigt haebn wird der Service an Sie herantreten um Ihre Bankdaten für die Erstattung zu erfragen."
+                }
+            ]
+        },{
+            "name": "Kontakt",
+            "text": "Sie erreichen uns unter den folgenden ",
+            "werte":[
+                {
+                    "name": "telefonisch",
+                    "wert": "Sprechzeiten 9- 16 Uhr Mo.-Fr. unter 01234-567 889 15"
+                },{
+                    "name": "per mail",
+                    "wert": "support@shoemanji.com"
+                }
+            ]
+        }
+    ]
+}

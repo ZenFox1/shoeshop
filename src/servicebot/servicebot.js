@@ -1,23 +1,21 @@
 import React from 'react';
 import { useState, useEffect, useCallback } from 'react';
-import serviceData from './service.json';
+import serviceData from './services.json';
 import './servicebot.css';
 
 
 function Servicebot(){
-    const [base, setBase] = useState("default");
     const [basename, setBasename] = useState("");
     const [serviceState, setServiceState] = useState(false);
-    const faqData = serviceData.faq;
+    const faqData = serviceData.DEservices;
     
     var snippet = <></>;
     var returnValue = <></>;
 
     function contentSwitcher(name){
-      let existingItem = faqData.find(item => item.namede === name);
+      let existingItem = faqData.find(item => item.name === name);
       if(existingItem){
-        setBase(existingItem.textde);
-        setBasename(existingItem.namede);
+        setBasename(existingItem.name);
       }
     }
 
@@ -30,26 +28,25 @@ function Servicebot(){
       if (basename === ""){
         snippet = 
         <>
-          <div>Wozu benötigen Sie Informationen?</div>
-          {faqData.map(theme => <button onClick={() => contentSwitcher(theme.namede)}>{theme.namede}</button>)}
+          <div>Mit welchem Thema benötigen Sie hilfe?</div>
+          {faqData.map(theme => <button onClick={() => contentSwitcher(theme.name)}>{theme.name}</button>)}
           <button className="service-bot-inuse" onClick={() => setServiceState(false)}>Hilfe ausblenden</button>
         </>;
 
-      }else if(basename == "Zahlungsarten"){
-        let nextLevel = faqData.find(item => item.namede === basename);
-        snippet = 
-        <>
-          <button style={{fontSize: "14px"}} onClick={() => setBasename("")}><img style={{width: "14px"}} src="./assets/img/back.png"/>zurück</button>
-          <div className="service-bot-texts">
-          {nextLevel.werte.map((lvl) =><><h6>{lvl.name}</h6><p>{lvl.wert}</p></> )}
-          </div>
-          <button className="service-bot-inuse" onClick={() => setServiceState(false)}>Hilfe ausblenden</button>
-        </>;
       }else{
+        let usedService = faqData.find(item => item.name === basename);
+        let serviceToMap = usedService.werte;
+
         snippet= 
         <>
           <button style={{fontSize: "14px"}} onClick={() => setBasename("")}><img style={{width: "14px"}} src="./assets/img/back.png"/>zurück</button>
-          <div className="service-bot-texts">{base}</div>
+          <div className="service-bot-texts">
+          <h5>{usedService.name}</h5>
+          <h6>{usedService.text}</h6>
+          {serviceToMap.map(
+            (service) => <><h6>{service.name}</h6><p>{service.wert}</p></>
+          )
+          }</div>
           <button className="service-bot-inuse" onClick={() => setServiceState(false)}>Hilfe ausblenden</button>
         </>;
       }

@@ -1,12 +1,12 @@
 {
-    "faq":[
+    "faqde":[
         {
-            "namede": "Widerrufsrecht",
-            "textde": "Sie haben 14 Werktage nach erhalt der Ware Zeit, Ihre Bestellung ohne Angabe von Gründen zu widerrufen.",
+            "name": "Widerrufsrecht",
+            "text": "Sie haben 14 Werktage nach erhalt der Ware Zeit, Ihre Bestellung ohne Angabe von Gründen zu widerrufen.",
             "werte":""
         },{
-            "namede": "Zahlungsarten",
-            "textde": "Wir bieten die folgenden Zahlungsmöglichkeiten an.",
+            "name": "Zahlungsarten",
+            "text": "Wir bieten die folgenden Zahlungsmöglichkeiten an.",
             "werte":[
                 {
                     "name": "Paypal",
@@ -22,24 +22,20 @@
                 }
             ]
         },{
-            "namede": "Rückgabe",
-            "textde": "Sie können die Ware binnen 14 Tagen ohne angaben von Gründen an uns zurück senden. Die Kosten für die Rücksendung ist von Ihnen zu tragen.",
+            "name": "Rückgabe",
+            "text": "Sie können die Ware binnen 14 Tagen ohne angaben von Gründen an uns zurück senden. Die Kosten für die Rücksendung ist von Ihnen zu tragen.",
             "werte":""
         },{
-            "namede": "Garantie",
-            "textde": "Es gelten die gesetzlichen Regelungen für Gewährleistungen. Zitat:'Jeder Händler muss zwei Jahre Gewährleistung (auch Mängelhaftung genannt) auf Neuwaren und zwölf Monate auf Gebrauchtwaren einräumen. Dazu ist er gesetzlich verpflichtet (§§ 437, 438 BGB). Die Gewährleistung deckt Mängel ab, die das Produkt bereits zum Zeitpunkt des Kaufs hatte.'Es gelten die gesetzlichen Regelungen für Gewährleistungen. Zitat:'Jeder Händler muss zwei Jahre Gewährleistung (auch Mängelhaftung genannt) auf Neuwaren und zwölf Monate auf Gebrauchtwaren einräumen. Dazu ist er gesetzlich verpflichtet (§§ 437, 438 BGB). Die Gewährleistung deckt Mängel ab, die das Produkt bereits zum Zeitpunkt des Kaufs hatte.'",
+            "name": "Garantie",
+            "text": "Es gelten die gesetzlichen Regelungen für Gewährleistungen. Zitat:'Jeder Händler muss zwei Jahre Gewährleistung (auch Mängelhaftung genannt) auf Neuwaren und zwölf Monate auf Gebrauchtwaren einräumen. Dazu ist er gesetzlich verpflichtet (§§ 437, 438 BGB). Die Gewährleistung deckt Mängel ab, die das Produkt bereits zum Zeitpunkt des Kaufs hatte.'Es gelten die gesetzlichen Regelungen für Gewährleistungen. Zitat:'Jeder Händler muss zwei Jahre Gewährleistung (auch Mängelhaftung genannt) auf Neuwaren und zwölf Monate auf Gebrauchtwaren einräumen. Dazu ist er gesetzlich verpflichtet (§§ 437, 438 BGB). Die Gewährleistung deckt Mängel ab, die das Produkt bereits zum Zeitpunkt des Kaufs hatte.'",
             "werte":""
         },{
-            "namede": "Versand",
-            "textde": "Unsere Waren werden ausschließlich via DHL oder der Deutschen Post (für kleinere Artikel) versendet. Sie erhalten für jede Paketsendung eine Sendungsverfolgung.",
+            "name": "Lieferung & Versand",
+            "text": "Die Lieferzeiten können Sie am Artikel entnehmen. Abweichungen werden umgehend an Sie kommuniziert. Dies ist z.B. der Fall wenn das Paket im Versandprozess beschädigt wurde o.Ä.",
             "werte":""
         },{
-            "namede": "Lieferung",
-            "textde": "Die Lieferzeiten können Sie am Artikel entnehmen. Abweichungen werden umgehend an Sie kommuniziert. Dies ist z.B. der Fall wenn das Paket im Versandprozess beschädigt wurde o.Ä.",
-            "werte":""
-        },{
-            "namede": "Kontakt",
-            "textde": "Sie erreichen uns per Mail unter support@shoemanji.com oder per Telefon unter 01234-56788910. Bitte Halten Sie Artikelnummer oder Ihre Bestellnumme bereit.",
+            "name": "Kontakt",
+            "text": "Sie erreichen uns per Mail unter support@shoemanji.com oder per Telefon unter 01234-56788910. Bitte Halten Sie Artikelnummer oder Ihre Bestellnumme bereit.",
             "werte":""
         }
     ]
