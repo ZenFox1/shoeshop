@@ -42,7 +42,7 @@
                 }
             ]
         },{
-            "name": "Bestellung",
+            "name": "Bestellablauf",
             "text": "Alles wichtige zu Ihrer Bestellung",
             "werte":[
                 {
@@ -60,7 +60,7 @@
                 }
             ]
         },{
-            "name": "Retouren und Rückerstattungen",
+            "name": "Retouren & Rückerstattungen",
             "text": "Wie kann ich Waren retournieren?",
             "werte":[
                 {
@@ -76,7 +76,7 @@
             ]
         },{
             "name": "Kontakt",
-            "text": "Sie erreichen uns unter den folgenden ",
+            "text": "Sollten noch Fragen offen sein erreichen Sie uns folgendermaßen ",
             "werte":[
                 {
                     "name": "telefonisch",
