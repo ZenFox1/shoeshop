@@ -18,7 +18,7 @@
             ],
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 59.99,
-            "bild": "shoe1.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Runner"
         },
             {
@@ -39,7 +39,7 @@
             ],
             "beschreibung": "Ideal für Tracking und ähnliche Outdoor Aktivitäten.",
             "preis": 59.99,
-            "bild": "shoe2.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Merrell"
         },
             {
@@ -60,7 +60,7 @@
             ],
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 49.99,
-            "bild": "shoe3.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Fluidride"
         },
             {
@@ -81,7 +81,7 @@
             ],
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 49.99,
-            "bild": "shoe4.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Runner"
         },
             {
@@ -102,7 +102,7 @@
             ],
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 49.99,
-            "bild": "shoe5.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Meindl"
         },
             {
@@ -121,7 +121,7 @@
             ],
             "beschreibung": "Durch eine gute Passform stützt dieser Schuh den Fuß Ihres Kindes optimal.",
             "preis": 29.99,
-            "bild": "shoe6.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Nike"
         },
             {
@@ -142,7 +142,7 @@
             ],
             "beschreibung": "Ideal für Tracking und ähnliche Outdoor Aktivitäten.",
             "preis": 69.99,
-            "bild": "shoe7.jpg",
+            "bild": "shoe.jpeg",
             "marke": "active"
         },
             {
@@ -163,7 +163,7 @@
             ],
             "beschreibung": "Perfekt für Anfänger und Profi geeignet.",
             "preis": 49.99,
-            "bild": "shoe8.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Runner"
         },
             {
@@ -184,7 +184,7 @@
             ],
             "beschreibung": "Perfekt für den Alltag geeignet.",
             "preis": 49.99,
-            "bild": "shoe9.jpg",
+            "bild": "shoe.jpeg",
             "marke": "Chack"
         }
     ]
